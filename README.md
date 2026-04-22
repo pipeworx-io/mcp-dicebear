@@ -1,31 +1,55 @@
 # mcp-dicebear
 
-MCP server for generating avatars via [DiceBear API](https://www.dicebear.com). No authentication required.
+DiceBear MCP — wraps DiceBear Avatar API v7 (free, no auth)
+
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `generate_avatar` | Generate a DiceBear avatar SVG URL for a given style and seed |
-| `list_styles` | List all available DiceBear avatar styles |
+| `list_styles` | List all available avatar styles. Returns style names and descriptions—use with generate_avatar to pick a style. |
 
-## Quickstart via Pipeworx Gateway
+## Quick Start
 
-Call any tool through the hosted gateway with zero setup:
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 
-```bash
-curl -X POST https://gateway.pipeworx.io/mcp \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "tools/call",
-    "params": {
-      "name": "dicebear_generate_avatar",
-      "arguments": { "style": "bottts", "seed": "hello" }
+```json
+{
+  "mcpServers": {
+    "dicebear": {
+      "url": "https://gateway.pipeworx.io/dicebear/mcp"
     }
-  }'
+  }
+}
 ```
+
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
+
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
+```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Dicebear data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
