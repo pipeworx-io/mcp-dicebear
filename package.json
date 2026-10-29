@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-dicebear",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "DiceBear MCP — wraps DiceBear Avatar API v7 (free, no auth)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-dicebear": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "dicebear"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-dicebear.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/dicebear",
   "pipeworx": {
-    "sourceHash": "v1-31c3494dd6dbe50582a936cf4fb477ccf7531980cdccf039e8eedda2b80b2298",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "mode": "gateway",
+    "slug": "dicebear",
+    "gatewaySlug": "dicebear",
+    "sourceHash": "v1-d82dea5280d6bc72de7c04d570aa77cc41f55d73663d13444269d1add9555c69",
+    "sourceCommit": "0b3faaa4d85299a961dd86dea75a0f0e1dad280c"
   }
 }
