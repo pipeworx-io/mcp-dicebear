@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-dicebear",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "DiceBear MCP — wraps DiceBear Avatar API v7 (free, no auth)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "dicebear",
     "gatewaySlug": "dicebear",
-    "sourceHash": "v1-d82dea5280d6bc72de7c04d570aa77cc41f55d73663d13444269d1add9555c69",
-    "sourceCommit": "0b3faaa4d85299a961dd86dea75a0f0e1dad280c"
+    "sourceHash": "v1-6ff0f9781c6bd486a0810afed631dab44162a92c2965a6869cc05e47d8fe53c2",
+    "sourceCommit": "e707a4bb6209f432984c0a83bf64b3138130db89"
   }
 }
